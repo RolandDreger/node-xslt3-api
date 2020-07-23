@@ -1,6 +1,7 @@
-﻿This is a showcase for a Node.js server with Express on localhost. It demonstrates an XSL transformation with Saxon-JS for Adobe Indesign - connected via a RESTful API. 
+This is a showcase for a Node.js server with Express on localhost. It demonstrates an XSL transformation with Saxon-JS for Adobe Indesign - connected via a RESTful API. 
 
 Saxon-JS is a XSLT 3.0 processor that runs in browser or on Node.js. Further information can be found on [www.saxonica.com](https://www.saxonica.com/saxon-js/index.xml). 
+
 
 
 ## Installation
@@ -20,9 +21,12 @@ To run the server, Node.js must be installed on your computer. You can download 
 	`npm start`
 
 
+
 ## POST Request Test
 
-To test the transformation, the XML file and the stylesheet in the asset Folder can be used:
+To test the transformation e.g. with Postman, the XML file and the stylesheet in the assets folder can be used:
+
+<img width="1106" alt="postman_screenshot" src="https://user-images.githubusercontent.com/19747449/88344396-c338bd80-cd43-11ea-8f0f-4e8476ed97df.png">
 
 `localhost:3000/transform/simple?stylesheet=stylesheet_group.sef.json`
 
@@ -30,11 +34,13 @@ To test the transformation, the XML file and the stylesheet in the asset Folder 
 **»?stylesheet=stylesheet_group.sef.json«** defines the stylesheet in the asset folder.
 
 
+
 ## Compile XSL Stylesheet
 
 `npx xslt3 -xsl:assets/xsl/stylesheet_group.xsl -export:assets/xsl/stylesheet_group.sef.json -nogo`
 
 Further information in [Saxon-JS 2 documentation](https://www.saxonica.com/saxon-js/documentation/index.html).
+
 
 
 ## InDesign Example
@@ -45,6 +51,7 @@ InDesign ExtendScript snippet with cURL (macOS):
 var _curlCommand = "curl -X POST 'http://localhost:3000/transform/simple?stylesheet=stylesheet_group.sef.json' -H 'Host: localhost:3000' -H 'content-type: text/xml' -d '@/.../xslt/assets/source_group.xml'";
 var _apiRequestString = app.doScript('do shell script "' + _curlCommand + '"', ScriptLanguage.APPLESCRIPT_LANGUAGE);
 ```
+
 
 ## Notice
 
