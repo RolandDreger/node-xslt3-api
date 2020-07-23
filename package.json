@@ -1,0 +1,21 @@
+{
+  "name": "node-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+	"author": "Roland Dreger <roland.dreger@a1.net>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-xml-bodyparser": "^0.3.0",
+    "saxon-js": "^2.0.2",
+    "xslt3": "^2.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

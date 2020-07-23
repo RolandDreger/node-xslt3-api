@@ -1,0 +1,8 @@
+﻿#MacOS
+.DS_Store
+
+#Node.js
+node_modules/
+
+#Log
+log/log.txt
