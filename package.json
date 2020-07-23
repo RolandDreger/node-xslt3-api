@@ -1,15 +1,22 @@
 {
-  "name": "node-express",
-  "version": "1.0.0",
-  "description": "",
+  "name": "node-xslt3-api",
+  "version": "1.0.1",
+  "description": "Simple web server application for XSL transformation via Saxon-JS with API for Adobe InDesign",
   "main": "app.js",
   "type": "module",
   "scripts": {
     "start": "nodemon index.js"
+	},
+	"repository": {
+    "type": "git",
+    "url": "git+https://github.com/RolandDreger/node-xslt3-api.git"
   },
 	"author": "Roland Dreger <roland.dreger@a1.net>",
   "license": "MIT",
-  "dependencies": {
+  "bugs": {
+    "url": "https://github.com/RolandDreger/node-xslt3-api/issues"
+	},
+	"dependencies": {
     "express": "^4.17.1",
     "express-xml-bodyparser": "^0.3.0",
     "saxon-js": "^2.0.2",
