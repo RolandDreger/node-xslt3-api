@@ -31,7 +31,7 @@ To test the transformation e.g. with Postman, the XML file and the stylesheet in
 `localhost:3000/transform/simple?stylesheet=stylesheet_group.sef.json`
 
 **»simpel«** is an optional parameter that can be used in the stylesheet. 
-**»?stylesheet=stylesheet_group.sef.json«** defines the stylesheet in the asset folder.
+**»?stylesheet=stylesheet_group.sef.json«** defines the stylesheet in the assets folder.
 
 
 
@@ -48,7 +48,7 @@ Further information in [Saxon-JS 2 documentation](https://www.saxonica.com/saxon
 InDesign ExtendScript snippet with cURL (macOS):
 
 ```
-var _curlCommand = "curl -X POST 'http://localhost:3000/transform/simple?stylesheet=stylesheet_group.sef.json' -H 'Host: localhost:3000' -H 'content-type: text/xml' -d '@/.../xslt/assets/source_group.xml'";
+var _curlCommand = "curl -X POST 'http://localhost:3000/transform/simple?stylesheet=stylesheet_group.sef.json' -H 'Host: localhost:3000' -H 'content-type: text/xml' -d '@/[yourPathToFile]/assets/source_group.xml'";
 var _apiRequestString = app.doScript('do shell script "' + _curlCommand + '"', ScriptLanguage.APPLESCRIPT_LANGUAGE);
 ```
 
