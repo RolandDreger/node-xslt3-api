@@ -1,4 +1,6 @@
-This is a showcase for a Node.js server with Express on localhost. It demonstrates an XSL transformation with Saxon-JS for Adobe Indesign. The result of the transformation can be retrieved via a REST API. 
+This is a showcase for a Node.js server with Express on localhost. It demonstrates an XSL transformation with Saxon-JS for Adobe Indesign. The result of the transformation can be retrieved via a REST API.
+
+A short video about it on [Vimeo](https://vimeo.com/440319737).
 
 Saxon-JS is a XSLT 3.0 processor that runs in browser or on Node.js. Further information can be found on [www.saxonica.com](https://www.saxonica.com/saxon-js/index.xml). 
 
