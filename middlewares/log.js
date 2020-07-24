@@ -4,7 +4,7 @@ const folderName = 'log';
 const fileName = 'log.txt';
 
 const log = (req, res, next) => {
-	
+
 	let logString = `
 		Request Date: ${ new Date() }
 		Host: ${ req.hostname }

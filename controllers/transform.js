@@ -1,15 +1,9 @@
 ﻿﻿import fs from 'fs';
 import SaxonJS from 'saxon-js';
 
-import { dirname } from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(dirname(__filename));
-
 /* GET request */
 export const transformGet = (req, res) => {
-	res.sendFile(__dirname + '/views/transform.html',)
+	res.sendFile(req.context.dirname + '/views/transform.html',)
 };
 
 /* POST request */
@@ -25,7 +19,7 @@ export const transformPost = (req, res) => {
 	const stylesheet = fs.readFileSync(stylesheetFilePath);
 	const source = req.rawBody;
 	const params = { ...req.params };
-
+	
 	SaxonJS.transform({
 			stylesheetText: stylesheet,
 			sourceText: source,

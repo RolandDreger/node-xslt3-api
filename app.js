@@ -1,10 +1,12 @@
 ﻿﻿import express from 'express';
 import xmlParser from 'express-xml-bodyparser';
 
-import log from './log/log.js';
+import addContext from './middlewares/addContext.js';
+import log from './middlewares/log.js';
 
 import homeRoutes from './routes/home.js';
 import transformRoutes from './routes/transform.js';
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -14,6 +16,9 @@ app.use(xmlParser({ "includeWhiteChars":false }));
 
 /* Static files */
 app.use(express.static('assets'));
+
+/* Context */
+app.use(addContext);
 
 /* Log */
 app.use(log);
