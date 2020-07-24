@@ -37,7 +37,7 @@ export const transformPost = (req, res) => {
 		res.send(output.principalResult);
 	})
 	.catch(error => {
-		console.log(error);
+		/* console.error(error); */
 		res.status(400).send(error.message);
 	});
 };
