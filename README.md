@@ -48,17 +48,9 @@ Further information in [Saxon-JS 2 documentation](https://www.saxonica.com/saxon
 InDesign ExtendScript snippet with cURL (macOS):
 
 ```
-var _curlCommand = "curl -X POST 'http://localhost:3000/transform/simple?stylesheet=stylesheet_group.sef.json' -H 'Host: localhost:3000' -H 'content-type: text/xml' -d '@/[yourPathToFile]/assets/source_group.xml'";
+var _curlCommand = "curl -X POST 'http://localhost:3000/transform/simple?stylesheet=stylesheet_group.sef.json' -H 'Host: localhost:3000' -H 'content-type: text/xml' -d '@/[PathToYourFolder]/assets/source_group.xml'";
 var _apiRequestString = app.doScript('do shell script "' + _curlCommand + '"', ScriptLanguage.APPLESCRIPT_LANGUAGE);
 ```
-
-
-## Notice
-
-This plugin is provided »as is«. Use it at your own risk. Please test the plugin carefully before using it in your production environment.
-
-Feedback is welcome.
-
 
 
 ## License
