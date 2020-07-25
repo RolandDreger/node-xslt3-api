@@ -21,7 +21,7 @@ app.use(express.static('assets'));
 app.use(addContext);
 
 /* Log */
-app.use(log);
+/* app.use(log); */
 
 /* Routes */
 app.use('/', homeRoutes);
