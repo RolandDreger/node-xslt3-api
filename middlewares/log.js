@@ -1,7 +1,7 @@
 ﻿﻿import fs from 'fs';
+import path from 'path';
 
-const folderName = 'log';
-const fileName = 'log.txt';
+const logFileName = 'log.txt';
 
 const log = (req, res, next) => {
 
@@ -10,15 +10,15 @@ const log = (req, res, next) => {
 		Host: ${ req.hostname }
 		Path: ${ req.path }
 		Method: ${ req.method }
-		Params: ${ JSON.stringify(req.params) }
+		URL: ${ req.originalUrl } 
 	`;
 
-	if(!fs.existsSync('./'+ folderName)) {
-		fs.mkdirSync('./'+ folderName);
+	if(!fs.existsSync(req.context.folder.log)) {
+		fs.mkdirSync(req.context.folder.log);
 	}
 
 	fs.appendFile(
-		'./' + folderName + '/' + fileName, 
+		path.join(req.context.folder.log, logFileName), 
 		logString , 
 		() => next()
 	);

@@ -1,16 +1,19 @@
 ﻿﻿import fs from 'fs';
+import path from 'path';
 import SaxonJS from 'saxon-js';
+
 
 /* GET request */
 export const transformGet = (req, res) => {
-	res.sendFile(req.context.dirname + '/views/transform.html',)
+	const transformViewFilePath = path.join(req.context.folder.root, req.context.folder.views, 'transform.html')
+	res.sendFile(transformViewFilePath);
 };
 
 /* POST request */
 export const transformPost = (req, res) => {
 	
 	const { "stylesheet": stylesheetFileName } = req.query;
-	const stylesheetFilePath = 'assets/xsl/' + stylesheetFileName;
+	const stylesheetFilePath = path.join(req.context.folder.stylesheets, stylesheetFileName);
 	
 	if(!fs.existsSync(stylesheetFilePath)) {
 		res.status(404).send('The requested stylesheet does not exist!');
