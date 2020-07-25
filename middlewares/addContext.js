@@ -1,13 +1,19 @@
-﻿import { dirname } from 'path';
+﻿import path from 'path';
 import { fileURLToPath } from 'url';
 
 const addContext = (req, res, next) => {
 	
 	const __filename = fileURLToPath(import.meta.url);
-	const __dirname = dirname(dirname(__filename));
+	const __dirname = path.dirname(path.dirname(__filename));
 	
 	req.context = {
-		dirname: __dirname /* root folder for absolute path */
+		folder: {
+			root: __dirname, /* root folder for absolute path */
+			assets: 'assets',
+			stylesheets: path.join('assets','xsl'),
+			views: 'views',
+			log:'log'
+		}
 	};
 	
 	next();
