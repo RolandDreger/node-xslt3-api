@@ -17,7 +17,7 @@
     "url": "https://github.com/RolandDreger/node-xslt3-api/issues"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "express-xml-bodyparser": "^0.3.0",
     "saxon-js": "^2.0.3",
     "xslt3": "^2.0.3"
